@@ -1,0 +1,33 @@
+Guia Rápido: Configuração e Execução dos Testes Cypress
+
+Pré-requisitos
+Node.js instalado
+Cypress instalado no projeto (npm install cypress --save-dev)
+Configuração do Ambiente
+Clone o repositório do projeto.
+Abra um terminal no diretório do projeto.
+Execute npm install para instalar as dependências do projeto.
+Execução dos Testes em Modo Headless
+Para executar os testes em modo headless, utilize o seguinte comando:
+
+
+npx cypress run --spec "cypress/e2e/step_definitions/buscar.feature"
+Isso executará os testes especificados no arquivo buscar.feature em modo headless, sem a interface gráfica.
+
+Pré-Condição: Configuração de Login
+Antes de executar os testes, certifique-se de que os arquivos de configuração de login sejam executados como uma pré-condição para garantir o sucesso dos testes. Isso pode ser feito automaticamente no arquivo de configuração do Cypress (cypress.config.js) ou por meio de scripts específicos antes da execução dos testes.
+
+Execução dos Testes na Interface Gráfica
+Para abrir a interface gráfica do Cypress e executar os testes interativamente, utilize o seguinte comando:
+
+
+npx cypress open
+Este comando abrirá a interface gráfica do Cypress, onde você pode selecionar e executar testes individualmente. Certifique-se de ter a pré-condição de login configurada antes de executar outros testes que dependem dela.
+
+Geração de Relatórios
+Para gerar e visualizar relatórios após a execução dos testes, utilize os seguintes comandos:
+
+
+npm run report:generate
+npm run report:open
+Estes comandos gerarão relatórios HTML na pasta cypress/reports/mochareports e abrirão o relatório no navegador padrão, respectivamente.
